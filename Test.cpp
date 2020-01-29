@@ -220,13 +220,28 @@ void test5() {
 }
 
 void test6() {
-  std::cout << "test5()" << std::endl;
+  std::cout << "test6()" << std::endl;
 
-  std::cout << std::endl << "CAnyPrint x;" << std::endl;
+  std::cout << std::endl << "CAny x;" << std::endl;
   CAny x;
 
   std::cout << std::endl << "x.emplace<Echo>();" << std::endl;
   x.emplace<Echo>();
+
+  std::cout << std::endl << "x.clear();" << std::endl;
+  x.clear();
+
+  std::cout << "x.isDefined() = " << x.isDefined() << std::endl;
+
+  std::cout << std::endl;
+
+}
+
+void test7() {
+  std::cout << "test7()" << std::endl;
+
+  std::cout << std::endl << "CAny x;" << std::endl;
+  CAny x(std::in_place_type<Echo>, 1);
 
   std::cout << std::endl << "x.clear();" << std::endl;
   x.clear();
@@ -245,4 +260,5 @@ void test_all() {
   test4();
   test5();
   test6();
+  test7();
 }

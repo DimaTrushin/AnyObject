@@ -121,6 +121,11 @@ public:
     : pIObject_(std::make_unique<CObjectStored<CObjType<T>>>(std::forward<T>(Object))) {
   }
 
+  template<class T, class... TArgs>
+  CAnyObject(std::in_place_type_t<T>,TArgs&& ... args)
+    : pIObject_(std::make_unique<CObjectStored<T>>(std::forward<TArgs>(args)...)) {}
+
+
   CAnyObject(const CAnyObject& Other)
     : pIObject_(Other.pIObject_ ? Other.pIObject_->_make_copy() : nullptr) {
   }
