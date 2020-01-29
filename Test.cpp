@@ -219,6 +219,24 @@ void test5() {
   std::cout << "vec.size() = " << vec.size() << std::endl;
 }
 
+void test6() {
+  std::cout << "test5()" << std::endl;
+
+  std::cout << std::endl << "CAnyPrint x;" << std::endl;
+  CAny x;
+
+  std::cout << std::endl << "x.emplace<Echo>();" << std::endl;
+  x.emplace<Echo>();
+
+  std::cout << std::endl << "x.clear();" << std::endl;
+  x.clear();
+
+  std::cout << "x.isDefined() = " << x.isDefined() << std::endl;
+
+  std::cout << std::endl;
+
+}
+
 
 void test_all() {
   test1();
@@ -226,4 +244,5 @@ void test_all() {
   test3();
   test4();
   test5();
+  test6();
 }

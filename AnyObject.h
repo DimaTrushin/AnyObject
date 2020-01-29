@@ -150,6 +150,9 @@ public:
     pIObject_ = std::make_unique<CObjectStored<TObject>>(std::forward<TArgs>(args)...);
   }
 
+  void clear() {
+    pIObject_.reset();
+  }
 protected:
   ~CAnyObject() = default;
 private:
