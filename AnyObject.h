@@ -106,9 +106,6 @@ protected:
 // Declaration of CAnyObject
 //---------------------------------------------------------------------------
 
-template<class>
-class TD;
-
 template< template<class>class TInterface,
           template<class, class>class TImplementation>
 class CAnyObject {
